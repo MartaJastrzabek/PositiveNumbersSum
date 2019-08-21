@@ -1,17 +1,17 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class PositiveNumbersSum {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Wprowadź liczby: ");
-        List<Double> list = getUserInput(in);
-        printInReverseOrder(list);
-        System.out.println(getSum(list));
-        System.out.println("Największa wprowadzona wartość to : " + getMaxNumber(list));
-        System.out.println("Najmniejsza wprowadzona wartość to : " + getMinNumber(list));
+                System.out.println("Wprowadź liczby: ");
+        try (Scanner in = new Scanner(System.in)){
+            List<Double> list = getUserInput(in);
+            printInReverseOrder(list);
+            System.out.println(getSum(list));
+            System.out.println("Największa wprowadzona wartość to : " + getMaxNumber(list));
+            System.out.println("Najmniejsza wprowadzona wartość to : " + getMinNumber(list));
+        } catch (InputMismatchException e){
+            System.out.println("Wprowadzono złą wartość");
+        }
     }
 
     private static double getMinNumber(List<Double> list) {
